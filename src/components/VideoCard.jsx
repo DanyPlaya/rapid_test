@@ -5,7 +5,6 @@ import {
   demoThumbnailUrl,
   demoVideoUrl,
   demoVideoTitle,
-  demoProfilePicture,
   demoChannelUrl,
   demoChannelTitle,
 } from '../utils/constants';
@@ -19,7 +18,7 @@ const VideoCard = ({
     <Card sx={{ width: { md: '320px', xs: '100%' }, boxShadow: 'none', borderRadius: 0 }}>
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <CardMedia
-          image={snippet?.thumbnails?.high?.url}
+          image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
           alt={snippet?.title}
           sx={{ width: 358, height: 180 }}
         />
